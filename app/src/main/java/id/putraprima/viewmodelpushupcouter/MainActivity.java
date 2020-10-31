@@ -7,21 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import id.putraprima.viewmodelpushupcouter.databinding.ActivityMainBinding;
+import id.putraprima.viewmodelpushupcouter.models.PushupCount;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int pushupCount = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        binding.txtPushupCount.setText("0");
-        binding.btnPushup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pushupCount++;
-                binding.txtPushupCount.setText(Integer.toString(pushupCount));
-            }
-        });
+        PushupCount pushupCount = new PushupCount(0);
+        binding.setPushupCount(pushupCount);
+        binding.setLifecycleOwner(this);
     }
 }
