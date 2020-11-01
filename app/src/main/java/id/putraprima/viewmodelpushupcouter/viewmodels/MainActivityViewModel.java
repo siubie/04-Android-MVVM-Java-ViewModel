@@ -7,7 +7,11 @@ import androidx.lifecycle.ViewModel;
 import id.putraprima.viewmodelpushupcouter.models.PushupCount;
 
 public class MainActivityViewModel extends ViewModel {
-    public PushupCount pushupCount = new PushupCount(0);
+    public PushupCount pushupCount;
+
+    public MainActivityViewModel(PushupCount pushupCount) {
+        this.pushupCount = pushupCount;
+    }
 
     public void doPushup(){
         this.pushupCount.setCount(this.pushupCount.getCount()+1);

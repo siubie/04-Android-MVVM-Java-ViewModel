@@ -10,6 +10,9 @@ import id.putraprima.viewmodelpushupcouter.BR;
 public class PushupCount {
     private int count;
 
+    public PushupCount() {
+    }
+
     public PushupCount(int count) {
         this.count = count;
     }
