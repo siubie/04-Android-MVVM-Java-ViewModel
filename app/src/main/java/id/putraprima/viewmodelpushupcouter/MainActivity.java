@@ -23,15 +23,6 @@ public class MainActivity extends AppCompatActivity {
         MainActivityViewModelFactory mainActivityViewModelFactory = new MainActivityViewModelFactory(new PushupCount(10));
         mainActivityViewModel = new ViewModelProvider(this, mainActivityViewModelFactory).get(MainActivityViewModel.class);
         binding.setViewModel(mainActivityViewModel);
-        binding.txtPushupCount.setText(String.valueOf(mainActivityViewModel.getPushup()));
-        binding.btnPushup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                binding.getViewModel().doPushup();
-                binding.txtPushupCount.setText(String.valueOf(mainActivityViewModel.getPushup()));
-            }
-        });
         binding.setLifecycleOwner(this);
-
     }
 }
