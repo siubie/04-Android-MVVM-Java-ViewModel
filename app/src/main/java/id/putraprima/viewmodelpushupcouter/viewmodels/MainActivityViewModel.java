@@ -2,14 +2,20 @@ package id.putraprima.viewmodelpushupcouter.viewmodels;
 
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import id.putraprima.viewmodelpushupcouter.models.PushupCount;
 
 public class MainActivityViewModel extends ViewModel {
-    public MutableLiveData<PushupCount> pushupCountMutableLiveData = new MutableLiveData<>();
-    public PushupCount pushupCount;
+    private MutableLiveData<PushupCount> pushupCountMutableLiveData = new MutableLiveData<>();
+    public LiveData<PushupCount> pushupCountLiveData;
+    private PushupCount pushupCount;
+
+    public LiveData<PushupCount> pushupCountLiveData(){
+        return this.pushupCountMutableLiveData;
+    }
 
     public MainActivityViewModel(PushupCount pushupCount) {
         this.pushupCount = pushupCount;
