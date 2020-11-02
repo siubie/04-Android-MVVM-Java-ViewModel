@@ -10,7 +10,6 @@ import id.putraprima.viewmodelpushupcouter.models.PushupCount;
 
 public class MainActivityViewModel extends ViewModel {
     private MutableLiveData<PushupCount> pushupCountMutableLiveData = new MutableLiveData<>();
-    public LiveData<PushupCount> pushupCountLiveData;
     private PushupCount pushupCount;
 
     public LiveData<PushupCount> pushupCountLiveData(){
